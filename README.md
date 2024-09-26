@@ -6,8 +6,6 @@ O projeto **Scheduling PHP** é uma aplicação web projetada para facilitar o p
 ## Features
 - **User-Friendly Interface**: Design intuitivo para fácil navegação e gerenciamento de agendamentos.
 - **Flexible Scheduling**: Usuários podem agendar, reagendar ou cancelar compromissos conforme sua disponibilidade.
-- **Notifications**: Lembretes automáticos por e-mail ou SMS para compromissos futuros.
-- **Admin Dashboard**: Ferramentas para prestadores de serviços gerenciarem agendamentos, visualizarem cronogramas e analisarem dados dos clientes.
 - **Open Source**: O projeto é open source, permitindo que desenvolvedores personalizem e aprimorem o sistema conforme necessário.
 
 ## Technologies Used
