@@ -1,54 +1,53 @@
 # Scheduling PHP
 
 ## Overview
-O projeto **Scheduling PHP** é uma aplicação web projetada para facilitar o processo de agendamento de compromissos para clientes e prestadores de serviços. O objetivo é simplificar o agendamento, melhorar a experiência do usuário e aumentar a eficiência operacional para negócios como clínicas e centros de serviços.
+The **Scheduling PHP** project is a web application designed to facilitate the appointment scheduling process for clients and service providers. The goal is to simplify scheduling, improve user experience, and increase operational efficiency for businesses such as clinics and service centers.
 
 ## Features
-- **User-Friendly Interface**: Design intuitivo para fácil navegação e gerenciamento de agendamentos.
-- **Flexible Scheduling**: Usuários podem agendar, reagendar ou cancelar compromissos conforme sua disponibilidade.
-- **Open Source**: O projeto é open source, permitindo que desenvolvedores personalizem e aprimorem o sistema conforme necessário.
+- **User-Friendly Interface**: Intuitive design for easy navigation and scheduling management.
+- **Flexible Scheduling**: Users can schedule, reschedule, or cancel appointments based on their availability.
+- **Open Source**: The project is open source, allowing developers to customize and enhance the system as needed.
 
 ## Technologies Used
-- **PHP**: Linguagem de script do lado do servidor para construir a aplicação.
-- **MySQL**: Sistema de gerenciamento de banco de dados para armazenar dados de agendamentos.
-- **HTML/CSS**: Para desenvolvimento front-end, garantindo um design responsivo.
+- **PHP**: Server-side scripting language to build the application.
+- **MySQL**: Database management system to store scheduling data.
+- **HTML/CSS**: For front-end development, ensuring a responsive design.
 
 ## Installation
-Para configurar o projeto Scheduling PHP em sua máquina local, siga estes passos:
+To set up the Scheduling PHP project on your local machine, follow these steps:
 
-1. **Clone o Repositório**:
-   ```bash
-   git clone https://github.com/seuusuario/scheduling-php.git
-   ```
+1. **Clone the Repository**:
+```bash
+git clone https://github.com/yourusername/scheduling-php.git
+```
 
-2. **Navegue até o Diretório do Projeto**:
-   ```bash
-   cd scheduling-php
-   ```
+2. **Navigate to the Project Directory**:
+```bash
+cd scheduling-php
+```
 
-3. **Configure o Banco de Dados**:
-   - Importe o arquivo SQL fornecido para o seu banco de dados MySQL.
+3. **Set up the Database**:
+- Import the provided SQL file for your MySQL database.
 
-4. **Configure a Conexão com o Banco de Dados**:
-   - Atualize as configurações de conexão no arquivo -> includes `database.php`.
+4. **Set up the Database Connection**:
+- Update the connection settings in the -> includes `database.php` file.
 
-5. **Inicie o Servidor**:
-   - Utilize um ambiente de servidor local (como XAMPP, WAMP) para executar a aplicação.
+5. **Start the Server**:
+- Use a local server environment (such as XAMPP, WAMP) to run the application.
 
 ## Demo
-Veja o sistema em ação:
+See the system in action:
 
 ![Demo of Scheduling PHP](https://github.com/Vidigal-code/scheduling-php/blob/main/example/example.gif?raw=true)
 
 ## Contributing
-Contribuições são bem-vindas! Se você tiver sugestões de melhorias ou quiser adicionar recursos, sinta-se à vontade para enviar um pull request ou abrir uma issue no repositório do GitHub.
+Contributions are welcome! If you have suggestions for improvements or want to add features, feel free to submit a pull request or open an issue on the GitHub repository.
 
 ## License
-Este projeto é licenciado sob a Licença MIT. Consulte o arquivo `LICENSE` para mais detalhes.
+This project is licensed under the MIT License. See the `LICENSE` file for more details.
 
 ## Contact
-Para qualquer dúvida ou feedback, entre em contato com o mantenedor do projeto em [kauanvidigalcontato@gmail.com].
+For any questions or feedback, please contact the project maintainer at [kauanvidigalcontato@gmail.com].
 
 ---
-
-Sinta-se à vontade para personalizar qualquer seção conforme as especificidades do seu projeto!
+Feel free to customize any section to suit your project's specific needs!
