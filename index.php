@@ -2,10 +2,11 @@
 require 'includes/database.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $_POST['name'];
-    $time = $_POST['time'];
-    $date = $_POST['date'];
-    $attendant = $_POST['attendant'];
+
+    $name = htmlspecialchars(trim($_POST['name']), ENT_QUOTES, 'UTF-8');
+    $time = htmlspecialchars(trim($_POST['time']), ENT_QUOTES, 'UTF-8');
+    $date = htmlspecialchars(trim($_POST['date']), ENT_QUOTES, 'UTF-8');
+    $attendant = htmlspecialchars(trim($_POST['attendant']), ENT_QUOTES, 'UTF-8');
 
     $stmt = $pdo->prepare("INSERT INTO appointments (name, time, date, attendant) VALUES (?, ?, ?, ?)");
     $stmt->execute([$name, $time, $date, $attendant]);
