@@ -1,19 +1,31 @@
 <?php
 require 'includes/database.php';
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+$error_message = '';
 
-    $name = htmlspecialchars(trim($_POST['name']), ENT_QUOTES, 'UTF-8');
-    $time = htmlspecialchars(trim($_POST['time']), ENT_QUOTES, 'UTF-8');
-    $date = htmlspecialchars(trim($_POST['date']), ENT_QUOTES, 'UTF-8');
-    $attendant = htmlspecialchars(trim($_POST['attendant']), ENT_QUOTES, 'UTF-8');
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    try {
+       
+        $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        $time = filter_input(INPUT_POST, 'time', FILTER_SANITIZE_SPECIAL_CHARS);
+        $date = filter_input(INPUT_POST, 'date', FILTER_SANITIZE_SPECIAL_CHARS);
+        $attendant = filter_input(INPUT_POST, 'attendant', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
-    $stmt = $pdo->prepare("INSERT INTO appointments (name, time, date, attendant) VALUES (?, ?, ?, ?)");
-    $stmt->execute([$name, $time, $date, $attendant]);
+     
+        if (!$name || !$time || !$date || !$attendant) {
+            throw new Exception("Todos os campos são obrigatórios.");
+        }
 
-    header("Location: appointments.php");
-    exit();
+        $stmt = $pdo->prepare("INSERT INTO appointments (name, time, date, attendant) VALUES (?, ?, ?, ?)");
+        $stmt->execute([$name, $time, $date, $attendant]);
+
+        header("Location: appointments.php");
+        exit();
+    } catch (Exception $e) {
+        $error_message = $e->getMessage();
+    }
 }
+
 ?>
 
 <!DOCTYPE html>

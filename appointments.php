@@ -1,30 +1,35 @@
 <?php
 require 'includes/database.php';
 
-if (isset($_GET['delete'])) {
-    $idToDelete = $_GET['delete'];
+$error_message = '';
 
-    $idToDelete = (int)$idToDelete;
+try {
+  
+    if (isset($_GET['delete'])) {
+        $idToDelete = filter_input(INPUT_GET, 'delete', FILTER_VALIDATE_INT);
 
-    $deleteStmt = $pdo->prepare("DELETE FROM appointments WHERE id = ?");
-    $deleteStmt->execute([$idToDelete]);
-    header("Location: " . $_SERVER['PHP_SELF']); 
-    exit();
-}
+        if (!$idToDelete) {
+            throw new Exception("ID inválido.");
+        }
 
-$search = '';
-if (isset($_GET['search'])) {
-    $search = $_GET['search'];
-    
-    $search = htmlspecialchars($search, ENT_QUOTES, 'UTF-8'); 
+        $deleteStmt = $pdo->prepare("DELETE FROM appointments WHERE id = ?");
+        $deleteStmt->execute([$idToDelete]);
+
+        header("Location: " . $_SERVER['PHP_SELF']);
+        exit();
+    }
+
+    $search = filter_input(INPUT_GET, 'search', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     
     $stmt = $pdo->prepare("SELECT * FROM appointments WHERE name LIKE ? OR attendant LIKE ?");
     $stmt->execute(["%$search%", "%$search%"]);
-} else {
-    $stmt = $pdo->query("SELECT * FROM appointments");
+    
+    $appointments = $stmt->fetchAll();
+
+} catch (Exception $e) {
+    $error_message = $e->getMessage();
 }
 
-$appointments = $stmt->fetchAll();
 ?>
 
 <!DOCTYPE html>
