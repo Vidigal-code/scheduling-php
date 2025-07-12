@@ -18,7 +18,7 @@ Para configurar o projeto Scheduling PHP em sua máquina local, siga estes passo
 
 1. **Clone o Repositório**:
    ```bash
-   git clone https://github.com/seuusuario/scheduling-php.git
+   git clone https://github.com/Vidigal-code/scheduling-php.git
    ```
 
 2. **Navegue até o Diretório do Projeto**:
